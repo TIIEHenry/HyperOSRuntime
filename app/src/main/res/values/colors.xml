@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="round_selector_press_color">#78909c</color>
+    <color name="round_selector_normal_color">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blueGrey_50">#eceff1</color>
+    <color name="blueGrey_100">#cfd8dc</color>
+    <color name="blueGrey_200">#b0bec5</color>
+    <color name="blueGrey_300">#90a4ae</color>
+    <color name="blueGrey_400">#78909c</color>
+    <color name="blueGrey_500">#607d8b</color>
+    <color name="blueGrey_600">#546e7a</color>
+    <color name="blueGrey_700">#455a64</color>
+</resources>

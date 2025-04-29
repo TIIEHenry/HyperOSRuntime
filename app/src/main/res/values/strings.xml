@@ -1,0 +1,5 @@
+<resources>
+    <string name="xposed_description">为运行HyperOS系统应用提供支持</string>
+    <string name="app_name">HyperOSRuntime</string>
+
+</resources>

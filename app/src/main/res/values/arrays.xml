@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="xposed_scope">
+        <item>com.miui.weather2</item>
+        <item>com.miui.gallery</item>
+        <item>com.xiaomi.aiasst.vision</item>
+        <item>com.miui.compass</item>
+        <item>com.miui.extraphoto</item>
+        <item>com.miui.mediaeditor</item>
+    </string-array>
+</resources>
