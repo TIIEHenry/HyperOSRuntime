@@ -8,6 +8,8 @@ import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XSharedPreferences;
 import de.robv.android.xposed.XposedBridge;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
+import tiiehenry.xp.updatehooker.hooks.AICRHook;
+import tiiehenry.xp.updatehooker.hooks.AccountHook;
 import tiiehenry.xp.updatehooker.hooks.HyperOSHook;
 
 public class XposedEntry extends XC_MethodHook implements IXposedHookLoadPackage, IXposedHookZygoteInit {
@@ -19,7 +21,8 @@ public class XposedEntry extends XC_MethodHook implements IXposedHookLoadPackage
 
     static {
         addHooker(new HyperOSHook());
-//        addHooker(new MiCleanerHook());
+        addHooker(new AICRHook());
+//        addHooker(new AccountHook());
     }
 
     public static void addHooker(BaseMethodHook hooker) {

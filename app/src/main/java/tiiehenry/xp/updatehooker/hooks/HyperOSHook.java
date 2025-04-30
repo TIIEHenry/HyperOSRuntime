@@ -1,7 +1,14 @@
 package tiiehenry.xp.updatehooker.hooks;
 
+import android.os.IBinder;
+import android.os.RemoteException;
+import android.util.Log;
+
+import com.xiaomi.security.devicecredential.ISecurityDeviceCredentialManager;
+
 import java.lang.reflect.Array;
 
+import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 import tiiehenry.xp.updatehooker.BaseMethodHook;
@@ -10,6 +17,10 @@ public class HyperOSHook extends BaseMethodHook {
 
     public HyperOSHook() {
         super("*", "HyperOSRuntime");
+    }
+
+    public HyperOSHook(String packageName, String hookName) {
+        super(packageName, hookName);
     }
 
     private static void injectClassLoader(Object hostDexPathList, ClassLoader injectClassLoader) {
@@ -29,41 +40,9 @@ public class HyperOSHook extends BaseMethodHook {
                 Array.getLength(hostDexElements), Array.getLength(pluginDexElements));
 
 // 替换宿主的 dexElements
-        XposedHelpers.setObjectField(hostDexPathList, "dexElements", combinedDexElements);/*
-        ClassLoader hostClassLoader = lpparam.classLoader;
-
-// 创建一个新的ClassLoader链
-        ClassLoader myClassLoader = getClass().getClassLoader();
-
-
-// 使用反射修改宿主ClassLoader的parent
-        try {
-            Field parentField = ClassLoader.class.getDeclaredField("parent");
-            parentField.setAccessible(true);
-            ClassLoader originParentClassLoader = (ClassLoader) parentField.get(hostClassLoader);
-
-            ClassLoader newParent = new ClassLoader(originParentClassLoader) {
-                //            ClassLoader newParent = new ClassLoader(MIUIFrameworkHook.createClassLoader(lpparam, (ClassLoader) originParentClassLoader)) {
-                @Override
-                protected Class<?> findClass(String name) throws ClassNotFoundException {
-//                    if (name.startsWith("org.slf4j")) {
-                        Log.e("AAA","findClass "+name);
-//                    }
-                    try {
-                        return super.findClass(name);
-                    } catch (ClassNotFoundException e) {
-                        Log.e("AAA","failed");
-//                        throw e;
-                    }
-                    return myClassLoader.loadClass(name);
-                }
-            };
-            parentField.set(hostClassLoader, newParent);
-        } catch (Exception e) {
-//            e.printStackTrace();
-            XposedBridge.log(e);
-        }*/
+        XposedHelpers.setObjectField(hostDexPathList, "dexElements", combinedDexElements);
     }
+
 
     @Override
     public void hook(XC_LoadPackage.LoadPackageParam lpparam) {
@@ -107,6 +86,8 @@ public class HyperOSHook extends BaseMethodHook {
 //                }
 //        );
 //        MIUIFrameworkHook.hookClassLoader(lpparam,lpparam.classLoader);
+
+
     }
 
 }
