@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "anyvoid.sdk.hyperos"
-        minSdkVersion 24
+        minSdkVersion 33
         targetSdkVersion 33
         versionCode new Date().format('yyMMdd').toInteger()
         versionName "1502QC"

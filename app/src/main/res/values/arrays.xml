@@ -7,5 +7,9 @@
         <item>com.miui.compass</item>
         <item>com.miui.extraphoto</item>
         <item>com.miui.mediaeditor</item>
+        <item>com.xiaomi.account</item>
+        <item>com.xiaomi.market</item>
+        <item>com.xiaomi.aicr</item>
+        <item>com.xiaomi.scanner</item>
     </string-array>
 </resources>

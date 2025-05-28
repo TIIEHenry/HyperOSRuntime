@@ -11,6 +11,7 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage;
 import tiiehenry.xp.updatehooker.hooks.AICRHook;
 import tiiehenry.xp.updatehooker.hooks.AccountHook;
 import tiiehenry.xp.updatehooker.hooks.HyperOSHook;
+import tiiehenry.xp.updatehooker.hooks.StoreHook;
 
 public class XposedEntry extends XC_MethodHook implements IXposedHookLoadPackage, IXposedHookZygoteInit {
 
@@ -22,6 +23,7 @@ public class XposedEntry extends XC_MethodHook implements IXposedHookLoadPackage
     static {
         addHooker(new HyperOSHook());
         addHooker(new AICRHook());
+        addHooker(new StoreHook());
 //        addHooker(new AccountHook());
     }
 
